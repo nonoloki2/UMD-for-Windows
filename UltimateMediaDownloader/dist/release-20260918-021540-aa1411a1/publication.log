@@ -1,0 +1,35 @@
+﻿**********************
+Início da transcrição do Windows PowerShell
+Hora de início: 20260918021540
+Nome de Usuário: DESKTOP-317KUUP\Nonoloki
+Executar como Usuário: DESKTOP-317KUUP\Nonoloki
+Nome da Configuração: 
+Computador: DESKTOP-317KUUP (Microsoft Windows NT 10.0.26100.0)
+Aplicativo Host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File C:\Users\Nonoloki\Downloads\fase6-publicar.ps1
+ID do Processo: 15228
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Project: C:\Users\Nonoloki\Documents\GitHub\UMD for Windows\UltimateMediaDownloader
+Output: C:\Users\Nonoloki\Documents\GitHub\UMD for Windows\UltimateMediaDownloader\dist\release-20260918-021540-aa1411a1
+Active SDK: 10.0.401
+Restoring Windows runtime packages...
+
+Publishing the self-contained Windows application...
+
+Building the installer...
+
+Installer ready: C:\Users\Nonoloki\Documents\GitHub\UMD for Windows\UltimateMediaDownloader\dist\release-20260918-021540-aa1411a1\UltimateMediaDownloader-1.0.0-setup.exe
+Application folder: C:\Users\Nonoloki\Documents\GitHub\UMD for Windows\UltimateMediaDownloader\dist\release-20260918-021540-aa1411a1\UltimateMediaDownloader
+Keep the complete folder together. Only the setup EXE is a standalone distribution file.
+Log: C:\Users\Nonoloki\Documents\GitHub\UMD for Windows\UltimateMediaDownloader\dist\release-20260918-021540-aa1411a1\publication.log
+**********************
+Fim da transcrição do Windows PowerShell
+Hora de término: 20260918021741
+**********************

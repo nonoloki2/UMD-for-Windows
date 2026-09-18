@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>UMD.Sandbox</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\UMD.Core\UMD.Core.csproj" />
+  </ItemGroup>
+
+  <!--
+    Copia yt-dlp.exe e ffmpeg.exe da pasta tools\ da raiz para a pasta tools\
+    ao lado do executavel compilado, que e onde o ToolManager procura.
+    Nao falha se os arquivos ainda nao tiverem sido baixados.
+  -->
+  <ItemGroup>
+    <ExternalTool Include="..\..\tools\*.exe" />
+  </ItemGroup>
+
+  <Target Name="CopyExternalTools" AfterTargets="Build">
+    <Copy SourceFiles="@(ExternalTool)"
+          DestinationFolder="$(OutDir)tools"
+          SkipUnchangedFiles="true"
+          Condition="'@(ExternalTool)' != ''" />
+  </Target>
+
+</Project>

@@ -1,0 +1,54 @@
+Ultimate Media Downloader for Windows (.NET)
+===========================================
+
+Este produto é uma obra derivada de:
+
+    Ultimate Media Downloader (UMD)
+    Copyright (c) NK2552003
+    https://codeberg.org/nk2552003/umd
+    Licenciado sob a Apache License, Version 2.0
+
+ALTERAÇÕES EM RELAÇÃO À OBRA ORIGINAL
+-------------------------------------
+
+Conforme exigido pela Seção 4(b) da Apache License 2.0, as seguintes
+modificações foram feitas:
+
+1. A aplicação foi reimplementada em C# / .NET 10, substituindo a
+   implementação original em Python 3.
+
+2. A interface de linha de comando baseada na biblioteca Rich foi substituída
+   por uma interface gráfica construída com WPF.
+
+3. A integração com o yt-dlp deixou de ser feita via importação de módulo
+   Python e passou a ser feita por invocação do executável yt-dlp.exe com
+   comunicação por linha de comando e saída JSON.
+
+4. As dependências Python foram substituídas por equivalentes .NET:
+   mutagen -> TagLibSharp; Pillow -> ImageSharp; BeautifulSoup -> AngleSharp;
+   requests/httpx -> HttpClient; spotipy -> SpotifyAPI-NET.
+
+5. A lógica de seleção de formato, detecção de plataforma e enfileiramento de
+   downloads foi portada mantendo o comportamento original.
+
+COMPONENTES DE TERCEIROS
+------------------------
+
+Esta aplicação invoca, mas não incorpora nem modifica, os seguintes programas:
+
+    yt-dlp  - Licença: Unlicense (domínio público)
+              https://github.com/yt-dlp/yt-dlp
+
+    FFmpeg  - Licença: LGPL v2.1+ ou GPL v2+, conforme a compilação usada
+              https://ffmpeg.org
+
+Ao distribuir este aplicativo com binários do FFmpeg incluídos, verifique qual
+compilação está sendo redistribuída e cumpra os termos correspondentes. Builds
+GPL exigem que o código-fonte do FFmpeg seja disponibilizado.
+
+AVISO DE USO
+------------
+
+Este software destina-se a uso pessoal e educacional. O usuário é responsável
+por respeitar os termos de serviço das plataformas acessadas e a legislação de
+direitos autorais aplicável em sua jurisdição.

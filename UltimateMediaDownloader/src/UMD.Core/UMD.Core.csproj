@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>UMD.Core</AssemblyName>
+    <RootNamespace>UMD.Core</RootNamespace>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <!--
+    Fase 1 nao precisa de nenhum pacote NuGet: o motor conversa com o
+    yt-dlp.exe por linha de comando e usa System.Text.Json (embutido no .NET).
+    As dependencias abaixo entram nas fases seguintes; deixadas comentadas
+    para referencia.
+
+    <ItemGroup>
+      <PackageReference Include="TagLibSharp" Version="2.3.0" />           metadata de audio (substitui mutagen)
+      <PackageReference Include="SixLabors.ImageSharp" Version="3.1.5" />  capas (substitui Pillow)
+      <PackageReference Include="AngleSharp" Version="1.1.2" />            scraping HTML (substitui BeautifulSoup)
+      <PackageReference Include="SpotifyAPI.Web" Version="7.2.1" />        API do Spotify (substitui spotipy)
+    </ItemGroup>
+  -->
+
+</Project>

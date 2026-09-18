@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>UltimateMediaDownloader</AssemblyName>
+    <RootNamespace>UMD.App</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+
+    <!-- Informacoes que aparecem em Propriedades do arquivo, no Windows. -->
+    <Product>Ultimate Media Downloader</Product>
+    <AssemblyTitle>Ultimate Media Downloader</AssemblyTitle>
+    <Company>Ultimate Media Downloader</Company>
+    <Version>1.0.0</Version>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Copyright>Baseado no UMD de NK2552003 - Apache 2.0</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!--
+      Publicacao. O WPF nao aceita trimming, entao PublishTrimmed fica desligado:
+      ligar gera um executavel que compila mas quebra em tempo de execucao ao
+      carregar XAML por reflexao.
+    -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <PublishTrimmed>false</PublishTrimmed>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <SatelliteResourceLanguages>en;pt-BR</SatelliteResourceLanguages>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UMD.Core\UMD.Core.csproj" />
+  </ItemGroup>
+
+  <!-- O icone tambem entra como recurso, para a janela usa-lo na barra de titulo. -->
+  <ItemGroup>
+    <Resource Include="app.ico" />
+  </ItemGroup>
+
+  <!-- Copia yt-dlp.exe, ffmpeg.exe e deno.exe para junto do executavel. -->
+  <ItemGroup>
+    <ExternalTool Include="..\..\tools\*.exe" />
+  </ItemGroup>
+
+  <Target Name="CopyExternalTools" AfterTargets="Build">
+    <Copy SourceFiles="@(ExternalTool)"
+          DestinationFolder="$(OutDir)tools"
+          SkipUnchangedFiles="true"
+          Condition="'@(ExternalTool)' != ''" />
+  </Target>
+
+</Project>

@@ -1,0 +1,6 @@
+# Build
+bin/
+obj/
+
+# Binarios externos baixados pelo get-tools.ps1
+tools/*.exe
